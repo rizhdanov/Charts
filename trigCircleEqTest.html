@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Test labels outside of a polygon</title>
+
+  <script src="equations.js"></script>
+  <link rel="stylesheet" type="text/css" href="katex.min.css">
+  <script src="katex.min.js" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="http://jsxgraph.uni-bayreuth.de/distrib/jsxgraph.css" />
+ <script type="text/javascript" src="http://jsxgraph.uni-bayreuth.de/distrib/jsxgraphcore.js"></script>
+
+  <script type="text/javascript" src="chartstyle.js"></script>  
+  <script type="text/javascript" src="trig_circle_eq.js"></script>  
+</head>
+
+<body>
+
+<div class="module">
+
+
+	<div id="box" class="mybox" style="width:300px; height:200px"></div>
+
+	<script>
+		var board = JXG.JSXGraph.initBoard('box', {boundingbox: [-1.33, 1.33, 1.33, -1.33], showCopyright:false, keepaspectratio:true, showNavigation:false, showInfobox:false});
+	
+		var ch = {};
+/*		
+		//test 1
+		var a = Math.PI/6,
+			x = Math.cos(a),
+			y = Math.sin(a);
+			
+		ch	= {
+			p: {
+				x: x, y: y, name:'', withLabel:false	},
+			catet: {
+				sx: { withLabel:true, name:(x-0).toFixed(2) },
+				h: 	{ withLabel:true, name:(y-0).toFixed(2) }		},
+			angle: {
+				withLabel:true, name:''	} 
+			};
+		board.trigCircle(ch);
+		
+*/
+		//test 2
+		var a = 5*Math.PI/4,
+			x = Math.cos(a),
+			y = Math.sin(a);
+			
+		chr	= {
+			p: {
+				x: x, y: y, name:'', withLabel:false, h:false,v:true, arc:'left'	},
+			catet: {
+				sx: {withLabel:false, name:'\\frac{\\sqrt{2}}{2}'},
+				h: 	{withLabel:true, name:'\\frac{\\sqrt{2}}{2}'}		},
+			angle: {
+				withLabel:true, name:''	} 
+			};
+			
+		board.trigCircleEq(chr);
+
+
+	</script>
+	
+</div>
+
+</body>
+
+</html>
